@@ -1,8 +1,7 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Depo {
-    //3 tane method olur.
+public class Depo {//3 tane method olur.
     // Bunlar;
     //public static void anaMenu()
     //public static void okulBilgileriniYazdir()
@@ -16,9 +15,11 @@ public class Depo {
     //    }
 
     //Kullanicidan tercih almak icin scanner class'indan faydalaniriz
+
     static Scanner scan = new Scanner(System.in);
+
     public static void anaMenu() throws InterruptedException, FileNotFoundException {
-        String tercih = "";
+
         //Ana menu :menuden ana menu secilince gidilecek yer olmali.
         //Kullanicidan tercih alip ,bu tercihi do-while loop'unda switch case ile istenen yere yonlendirmeliyiz
 
@@ -29,49 +30,49 @@ public class Depo {
         //           "                        3- Ogrenci Menu\n" +
         //           "                        Q- ÇIKIŞ");
 
-        do {
+        String tercih="";
+
+        do{
             System.out.println("""
                 =========== YILDIZ KOLEJI =============
                 ==============  ANA MENU ==============
                 1- Okul Bilgileri Goruntule
                 2- Ogretmen Menu
                 3- Ogrenci Menu
-                Q- ÇIKIŞ")""");
+                Q- CIKIS""");
             System.out.println("Lutfen menuden tercihinizi yapiniz");
             tercih = scan.nextLine();
             switch (tercih){
-                case"1": //Okul Bilgileri Goruntule
-                okulBilgileriniYazdir();
+                case "1":// 1- Okul Bilgileri Goruntule
+                    okulBilgileriniYazdir();
                     break;
-                case"2"://Ogretmen Menu
-                    Ogretmen.OgretmenMenu();
+                case "2":// 2- Ogretmen Menu
+                    Ogretmen.ogretmenMenu();
                     break;
-                case"3"://Ogrenci Menu
-                   // OgrenciMenu();
+                case "3"://3- Ogrenci Menu
+                    Ogrenci.ogrenciMenu();
                     break;
-                case"Q":
-
-                case"q":
-
+                case "Q":
+                case "q":
                     break;
                 default:
-                    System.out.println("Lutfen gecerli bir tercih yapin");
+                    System.out.println("Lutfen gecerli bir tercih yapiniz");
+
             }
-        }while(!tercih.equalsIgnoreCase("q"));
+        }while (!tercih.equalsIgnoreCase("Q"));
+
         projeDurdur();
+
 
 
     }
 
-
-
     public static void okulBilgileriniYazdir() throws InterruptedException {
         System.out.println("""
-                =========== YILDIZ KOLEJI =============
-                Adres : """+ Okul.adres + """
-                \nTelefon :+ """+ Okul.telefon);
+                 =========== YILDIZ KOLEJI =============
+                 Adres : """+Okul.adres+ """
+                \nTelefon : """+Okul.telefon);
         Thread.sleep(3000);
-
     }
 
     public static void projeDurdur() {
