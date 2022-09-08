@@ -214,7 +214,9 @@ public class Ogretmen {
             scan.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+
         }
+
 
 
     }
